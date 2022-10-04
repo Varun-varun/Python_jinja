@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>Browser</title>
+</head>
+
+
+
+<body>
+    <div class="card">
+        <form>
+            <div style="display: flex;">
+                <div class="row col-md-6">
+                    <label for="hub">Hub <span style="color:#d81313"> * </span> <br><input value="{{ data.hub }}" class="input" /></label>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="row col-md-6">
+                    <label for="grn">GRN <br><input value="{{ data.grn }}" class="input" /></label>
+                </div>
+            </div>
+
+            <div class="row col-md-6">
+                <label for="supplier">Supplier <span style="color:#d81313"> * </span><br><input value="{{ data.supplier }}" class="input" /></label>
+            </div>
+
+            <div class="row col-md-6">
+                <label for="supplierName">Supplier name <br><input value="{{ data.supplier_name }}" class="input" /></label>
+            </div>
+
+        </form>
+    </div>
+
+    
+    <div class="card">
+        <p class="m-b10"><b>SKU Summary</b></p>
+
+        <table class="tb">
+                
+            <label for="firstname">SKU Table</label><br>
+            <tr>
+                <td>No.</td>
+                <td>SKU</td>
+                <td>SKU Description</td>
+                <td>standard_crate_quantity</td>
+                <td>quantity</td>
+            </tr>
+            <tr>
+                
+                <td type="radio">{{ data.sku_table[0].idx }}</td>
+                <td>{{ data.sku_table[0].sku }}</td>
+                <td>{{ data.sku_table[0].sku_description }}</td>
+                <td>{{ data.sku_table[0].standard_crate_quantity }}</td>
+                <td>{{ data.sku_table[0].quantity }}</td>
+                
+            </tr>
+        </table>
+    </div>
+    <div class="card">
+        <div style="display:flex;"> <b>Crate List</b><span>&nbsp;</span></div>
+
+        <table class="tb">
+            <label for="firstname">Crate list</label><br>
+            <tr>
+                <td>No.</td>
+                <td>Crate</td>
+                <td>SKU</td>
+                <td>Packed Quantity</td>
+                <td>Crate Weight</td>
+                <td>is Final crate</td>
+            </tr>
+            <tr>
+                <td>{{ data.crate_table[0].idx }}</td>
+                <td>{{ data.crate_table[0].crate }}</td>
+                <td>{{ data.crate_table[0].sku }}</td>
+                <td>{{ data.crate_table[0].packed_quantity }}</td>
+                <td>{{ data.crate_table[0].crate_weight }}</td>
+                <td>{{ data.crate_table[0].is_final_crate }}</td>
+            </tr>
+            <tr>
+                <td>{{ data.crate_table[1].idx }}</td>
+                <td>{{ data.crate_table[1].crate }}</td>
+                <td>{{ data.crate_table[1].sku }}</td>
+                <td>{{ data.crate_table[1].packed_quantity }}</td>
+                <td>{{ data.crate_table[1].crate_weight }}</td>
+                <td>{{ data.crate_table[1].is_final_crate }}</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+ <style>
+  body {
+  margin: 10px;
+  background-color: rgb(233, 232, 231);
+  
+}
+form{
+width: 100%
+}
+div{
+padding-bottom : 8px
+}
+
+table.tb {
+    border-collapse: collapse;
+    width: 100%
+}
+
+.tb th,.tb td {
+    padding: 10px;
+    border: solid 1px rgb(224, 217, 217)
+}
+/* table, th, td{
+  border: 1px solid black;
+  text-align: center;
+  border-spacing: 0px;
+  width:100%
+} */
+
+/* th{
+color: grey;
+} */
+
+.input{
+    background-color: #f7f7f7;
+    border: 1px solid #8080801f;
+    height: 28px;
+    width: 300px;
+    border-radius: 6px;
+}
+
+.card{
+border: 1px solid  #e4dfdf;
+/* background-color:rgb(243, 237, 237); */
+margin-bottom: 20px;
+padding: 10px;
+border-radius:6px;
+/* box-shadow:0px 2px; */
+}
+  </style>
+ </body>
+</html>
